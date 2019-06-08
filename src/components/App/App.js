@@ -1,6 +1,6 @@
 import React from 'react';
 
-import D3Version from '../D3Version';
+import D3Version from '../D3Version/D3Version';
 
 import './App.css';
 
