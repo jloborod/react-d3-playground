@@ -24,13 +24,17 @@ class Circle extends React.Component {
 
   render() {
     const { x } = this.state;
+    const { width, height, onClick } = this.props;
+
     return (
-      <circle
-        r={10}
-        cx={x}
-        cy={15}
-        ref={this.ref}
-      />
+      <svg style={{ width, height }} onClick={onClick}>
+        <circle
+          r={10}
+          cx={x}
+          cy={15}
+          ref={this.ref}
+        />
+      </svg>
     )
   }
 }

@@ -10,8 +10,11 @@ export default () => {
   };
 
   return (
-    <svg style={{ width: '100%', height: '100px' }} onClick={handleClick} >
-      <Circle x={isLeft ? 15 : 300} />
-    </svg>
-  )
+    <Circle
+      width='100%'
+      height='100px'
+      x={isLeft ? 15 : 300}
+      onClick={handleClick}
+    />
+  );
 };
