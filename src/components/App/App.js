@@ -1,13 +1,13 @@
 import React from 'react';
 
-import D3Version from '../D3Version/D3Version';
+import Circle from '../Circle';
 
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <D3Version />
+      <Circle />
     </div>
   );
 }
