@@ -1,42 +1,35 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import * as d3 from 'd3';
 
-class Circle extends React.Component {
-  state = {
-    x: this.props.x
-  };
+const Circle = ({ x, width, height, onClick }) => {
+  const [ cx, setCx ] = useState(x);
+  const ref = useRef();
 
-  ref = React.createRef();
-
-  componentDidUpdate() {
-    d3
-      .select(this.ref.current)
-      .transition()
-      .duration(300)
-      .ease(d3.easeCubicInOut)
-      .attr('cx', this.props.x)
-      .on('end', () => {
-        this.setState({
-          x: this.props.x
+  useEffect(() => {
+    const animateD3Element = () => {
+      d3
+        .select(ref.current)
+        .transition()
+        .duration(300)
+        .ease(d3.easeCubicInOut)
+        .attr('cx', x)
+        .on('end', () => {
+          setCx(x);
         });
-      })
-  }
+    }
+    animateD3Element();
+  }, [x]);
 
-  render() {
-    const { x } = this.state;
-    const { width, height, onClick } = this.props;
-
-    return (
-      <svg style={{ width, height }} onClick={onClick}>
-        <circle
-          r={10}
-          cx={x}
-          cy={15}
-          ref={this.ref}
-        />
-      </svg>
-    )
-  }
+  return (
+    <svg style={{ width, height }} onClick={onClick}>
+      <circle
+        r={10}
+        cx={cx}
+        cy={15}
+        ref={ref}
+      />
+    </svg>
+  );
 }
 
 export default Circle;
