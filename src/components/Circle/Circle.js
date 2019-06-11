@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
+import PropTypes from 'prop-types';
 import * as d3 from 'd3';
 
-const Circle = ({ x, width, height, onClick }) => {
+const Circle = ({ x, width, height, color, onClick }) => {
   const [ cx, setCx ] = useState(x);
   const ref = useRef();
 
@@ -21,7 +22,7 @@ const Circle = ({ x, width, height, onClick }) => {
   }, [x]);
 
   return (
-    <svg style={{ width, height }} onClick={onClick}>
+    <svg style={{ width, height, fill: `${color}` }} onClick={onClick}>
       <circle
         r={10}
         cx={cx}
@@ -31,5 +32,21 @@ const Circle = ({ x, width, height, onClick }) => {
     </svg>
   );
 }
+
+Circle.propTypes = {
+  x: PropTypes.number,
+  width: PropTypes.string,
+  height: PropTypes.string,
+  color: PropTypes.string,
+  onClick: PropTypes.func
+};
+
+Circle.defaultProps = {
+  x: 0,
+  width: '100%',
+  height: 'auto',
+  color: 'black',
+  onClick: () => {}
+};
 
 export default Circle;
