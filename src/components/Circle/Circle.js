@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import * as d3 from 'd3';
 
 const Circle = ({ x, width, height, color, onClick }) => {
-  const [ cx, setCx ] = useState(x);
   const ref = useRef();
+  const [ cx, setCx ] = useState(x);
 
   useEffect(() => {
     const animateD3Element = () => {

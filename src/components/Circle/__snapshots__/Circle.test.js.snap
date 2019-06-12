@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Circle /> should render without crashing 1`] = `
+<svg
+  onClick={[Function]}
+  style={
+    Object {
+      "fill": "black",
+      "height": "auto",
+      "width": "100%",
+    }
+  }
+>
+  <circle
+    cx={0}
+    cy={15}
+    r={10}
+  />
+</svg>
+`;
