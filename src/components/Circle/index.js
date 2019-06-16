@@ -11,8 +11,8 @@ export default () => {
 
   return (
     <Circle
-      width='340px'
-      height='100px'
+      width={340}
+      height={100}
       color='white'
       x={isLeft ? 15 : 300}
       onClick={handleClick}

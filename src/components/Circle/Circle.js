@@ -35,16 +35,16 @@ const Circle = ({ x, width, height, color, onClick }) => {
 
 Circle.propTypes = {
   x: PropTypes.number,
-  width: PropTypes.string,
-  height: PropTypes.string,
+  width: PropTypes.number,
+  height: PropTypes.number,
   color: PropTypes.string,
   onClick: PropTypes.func
 };
 
 Circle.defaultProps = {
   x: 0,
-  width: '100%',
-  height: 'auto',
+  width: 340,
+  height: 100,
   color: 'black',
   onClick: () => {}
 };
